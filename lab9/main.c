@@ -13,6 +13,6 @@ int main(void) {
     free_memory(films, size);
 
 
-    getch();
+
     return 0;
 }
