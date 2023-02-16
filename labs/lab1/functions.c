@@ -5,7 +5,7 @@
 
 int get_size(int size) {
     printf("Enter number of films: ");
-    while (scanf("%d", &size) != 1 || getchar() != '\n' || size < 1 )
+    while (scanf_s("%d", &size) != 1 || getchar() != '\n' || size < 1 )
     {
         printf("Error! Try again\n");
         rewind(stdin);
@@ -34,17 +34,17 @@ void free_memory(Film* film, int size) {
 void create_film(Film film) {
     char buffer[128];
     printf("Film name: ");
-    scanf("%127s", &buffer);
+    scanf_s("%127s", &buffer);
     film.name = (char*)malloc(strlen(buffer)+1);
     strcpy(film.name, buffer);
 
     printf("Film genre: ");
-    scanf("%127s", &buffer);
+    scanf_s("%127s", &buffer);
     film.genre = (char*)malloc(strlen(buffer)+1);
     strcpy(film.genre, buffer);
 
     printf("Film review: ");
-    scanf("%f", &(film.review));
+    scanf_s("%f", &(film.review));
     printf("\n");
 }
 Film* memory(int size) {
@@ -57,17 +57,17 @@ void create_mas_struct(Film* films, int size) {
     for (int i = 0; i < size; ++i) {
 
         printf("Film [%d] name: ", i+1);
-        scanf("%127s", &buffer);
+        scanf_s("%127s", &buffer);
         films[i].name = (char*)malloc(strlen(buffer)+1);
         strcpy(films[i].name, buffer);
 
         printf("Film [%d] genre: ", i+1);
-        scanf("%127s", &buffer);
+        scanf_s("%127s", &buffer);
         films[i].genre = (char*)malloc(strlen(buffer)+1);
         strcpy(films[i].genre, buffer);
 
         printf("Film [%d] review: ", i+1);
-        scanf("%f", &((films+i)->review));
+        scanf_s("%f", &((films+i)->review));
         printf("\n");
     }
 }
