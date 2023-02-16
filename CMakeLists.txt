@@ -3,4 +3,4 @@ project(lab9 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(lab9 main.c header.h functions.c)
+add_executable(lab9 lab9/main.c lab9/header.h lab9/functions.c)
